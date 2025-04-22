@@ -107,7 +107,7 @@ class DriveService {
           notes.add(
             Note.fromDriveFile(
               fileId: file.id!,
-              title: file.name ?? 'Untitled Note',
+              title: _removeExtension(file.name ?? 'Untitled Note'),
               content: content,
               createdTime: file.createdTime,
               modifiedTime: file.modifiedTime,
@@ -245,7 +245,7 @@ class DriveService {
 
       return Note.fromDriveFile(
         fileId: file.id!,
-        title: file.name ?? 'Untitled Note',
+        title: _removeExtension(file.name ?? 'Untitled Note'),
         content: content,
         createdTime: file.createdTime,
         modifiedTime: file.modifiedTime,
@@ -254,5 +254,9 @@ class DriveService {
       debugPrint('Error fetching note: $e');
       return null;
     }
+  }
+
+  String _removeExtension(String fileName) {
+    return fileName.endsWith('.txt') ? fileName.substring(0, fileName.length - 4) : fileName;
   }
 }

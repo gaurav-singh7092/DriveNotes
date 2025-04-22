@@ -436,6 +436,9 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
                                             .titleMedium
                                             ?.copyWith(
                                               fontWeight: FontWeight.w600,
+                                              color: isDarkMode
+                                                  ? Colors.white
+                                                  : Colors.black,
                                             ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
@@ -477,9 +480,9 @@ class _NotesListScreenState extends ConsumerState<NotesListScreen> {
                                         .textTheme
                                         .bodyMedium
                                         ?.copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurfaceVariant,
+                                          color: isDarkMode
+                                              ? Colors.white.withOpacity(0.8)
+                                              : Colors.black.withOpacity(0.7),
                                         ),
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,

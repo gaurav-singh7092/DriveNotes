@@ -75,8 +75,9 @@ class AuthScreen extends ConsumerWidget {
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black87,
                   ),
-                  icon: Image.network(
-                    'https://developers.google.com/identity/images/g-logo.png',
+                  icon: Image.asset(
+                    'assets/images/g-logo.png',
+                    width: 24,
                     height: 24,
                   ),
                   label: const Text(
